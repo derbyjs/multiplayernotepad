@@ -41,17 +41,21 @@ header.label, .time
 .main
   position: absolute
   top: headerHeight
-  bottom: 0
   margin: verticalMargin horizontalMargin
   padding: headerHeight horizontalMargin verticalMargin horizontalMargin
   left: 0
   right: 0
 
+.story .main
+  bottom: 0
+
 .story textarea
   border: none
   resize: none
+  box-sizing: border-box
   width: 100%
   height: 100%
+  padding: verticalMargin horizontalMargin
 
 textarea:focus, textarea:active
   box-shadow: none
