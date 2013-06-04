@@ -1,0 +1,14 @@
+<Body:>
+  <div class="header-wrapper">
+    <header class="label">Multi-Player Notepad</header>
+  </div>
+
+  <div class="past-stories main">
+    <h2 class="label prompt-label">Prompts</h2>
+    {#each config.prompts}
+      <p class="prompt"><a href="{{promptUrl(this)}}">{{this}} <span class="light">»<span></p>
+    {/}
+  </div>
+  <div class="reset">
+    <a class="label" href="/">Write a new story</a>
+  </div>
