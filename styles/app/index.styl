@@ -2,55 +2,156 @@
 @import './home'
 @import './list'
 
+headerHeight = 50px
+clockHeight = 36px
+verticalMargin = 30px
+horizontalMargin = 25px
+startButtonSize = 400px
+resetButtonSize= 220px
+duration = 350ms
+
 body
   margin: 0
   width: 100%
   height: 100%
-  background: lightgrey
+  background: #f4f4f4
+a, a:hover, a:visited
+  color: inherit;
+  text-decoration: none
 
-.story textarea
-  font-size: 20px;
-  font-family: monaco;
-  top: 0
-  bottom: 0
+.header-wrapper
+  text-align: center
+  height: headerHeight
+  padding-top: headerHeight *.5
+  transition: background duration
+
+.label, .time
+  font-family: 'Lato', sans-serif
+  text-transform: uppercase
+  font-size: 14px
+  letter-spacing: 3px
+
+header.label, .time
+  color: rgba(#000000, .2)
+
+.story textarea, .story-text, .prompt
+  font-family: 'Merriweather', serif  
+  font-size: 30px
+  color: #424242
+  line-height: 1.5em
+ 
+.main
+  position: absolute
+  top: headerHeight
+  margin: verticalMargin horizontalMargin
+  padding: headerHeight horizontalMargin verticalMargin horizontalMargin
   left: 0
   right: 0
-  border-radius: 3px
-  margin: 30px
-  padding: 6px
-  position: absolute
 
-textarea.notgoing
-  background-color: gray
+.story textarea
+  bottom: 0
+  border: none
+  
+textarea:focus, textarea:active
+  box-shadow: none
+  outline: none
+
+.notgoing
+  background: rgb(89, 91, 100)
+  height: 100%
+  width: 100%
+  position:absolute
+  textarea
+    opacity: .2
+  header
+    color: white
 
 .startbutton
   position:absolute
   top: 50%
   left: 50%
-  width: 300px
-  height: 200px
-  margin: -100px 0px 0px -150px
-  background: rgb(224, 168, 108)
-  line-height: 200px
+  width: startButtonSize
+  height: startButtonSize
+  margin: (-.5 * startButtonSize) 0px 0px (-.5 * startButtonSize)
+  border-radius: (startButtonSize/2)
   text-align: center
+  display: table
+  transition: background duration, color duration
 
+  div
+    display:table-cell
+    vertical-align: middle
+    text-align: center
+    p
+      width: (startButtonSize/2)px
+      margin: 0px auto
+      font-size: 14px
+      line-height: 1.4em
+    .accent
+      width: 100%
+      max-width: 100%
+      display: inline-block
+      font-size: 18px
+      margin: 10px 0px
+
+  background: white
+  color: #7f7f7f
+.startbutton:hover
+  cursor: pointer
+  background: rgb(222, 238, 212)
 .startbutton.going
     display: none
-  //.notgoing
-
 .startbutton.ready
-  background-color: rgb(107, 194, 155)
+  background: #AAD193
+  color: white
 
-.clock
+.clock, .reset
   position: absolute
-  top: 20px
-  right: 20px
-  background-color: rgb(212, 255, 184)
-  padding: 19px
-  font-size: 41px
-  font-family: monospace
-  border-radius: 5px
-  border: 3px solid black
-
+  top: headerHeight + (clockHeight / 2)
+  height: clockHeight
+  line-height: clockHeight
+  font-family: "Lato", sans-serif
+  border: 1px solid #eeeeee
+  padding: 0px
+  display: inline-block
+.clock
+  right: horizontalMargin*2
+  span
+    height: clockHeight 
+    line-height: clockHeight
+    padding: 0px 15px
+    margin: 0px
+    display: inline-block
+    float: left
+  .label
+    background: #ffffff
+  .time
+    font-size: 18px
+    color: white
+    background: #f6b4b4
 .clock.notgoing
   display:none
+
+.reset
+  right: 50%
+  margin-right: -.5*resetButtonSize
+  width: resetButtonSize
+  text-align: center
+  background: #AAD193;
+  color: white
+.past-stories
+  background: white
+  .story
+    display: inline-block
+    width: 100%
+  .label
+    color: rgba(#000000, .4)
+    margin: headerHeight 0px (verticalMargin/2) 0px
+  .prompt-label
+    color: #f6b4b4
+    margin-top: 0px
+  pre, .prompt
+    margin: 0px
+  .prompt
+    font-size: 36px
+    margin: 0px
