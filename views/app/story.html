@@ -1,9 +1,14 @@
 <Body:>
   <textarea class="{#if _page.story.startTime}going{else}notgoing{/}" disabled={not(_page.story.startTime)}>{_page.story.content}</textarea>
 
-  <div class="clock">{_page.clock}</div>
+  <div
+    class="clock {#if _page.story.startTime}going{else}notgoing{/}">
+    {_page.clock}
+  </div>
 
-  <div class="startbutton {#if _page.story.startTime}going{else}notgoing{/}" x-bind='click:startGame'>
+  <div
+    class="startbutton {#if _page.story.startTime}going{else}notgoing{/} {#if _page.story.ready[_session.userId]}ready{/}"
+    x-bind='click:startGame'>
     {#if _page.story.ready[_session.userId]}
       Ready! Waiting for other player
     {else}

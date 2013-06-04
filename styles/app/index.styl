@@ -8,16 +8,6 @@ body
   height: 100%
   background: lightgrey
 
-.container
-  padding: 0 10px
-
-.content
-  padding: 80px 0
-
-footer
-  border-top: 1px solid #eee
-  padding: 19px 0
-
 .story textarea
   font-size: 20px;
   font-family: monaco;
@@ -40,11 +30,16 @@ textarea.notgoing
   width: 300px
   height: 200px
   margin: -100px 0px 0px -150px
-  background: red
+  background: rgb(224, 168, 108)
+  line-height: 200px
+  text-align: center
 
 .startbutton.going
     display: none
   //.notgoing
+
+.startbutton.ready
+  background-color: rgb(107, 194, 155)
 
 .clock
   position: absolute
@@ -57,3 +52,5 @@ textarea.notgoing
   border-radius: 5px
   border: 3px solid black
 
+.clock.notgoing
+  display:none
