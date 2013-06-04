@@ -1,30 +1,26 @@
 <Body:>
-
-  <div class="header-wrapper {#if _page.story.startTime}going{else}notgoing{/}">
-    <header class="label">Multi-Player Notepad</header>
-
-    <textarea class="main" disabled={not(_page.story.startTime)}>{_page.story.content}</textarea>
-
-  </div>
-
-  <div
-    class="clock {#if _page.story.startTime}going{else}notgoing{/}">
-    <span class="label">Time remaining</span>
-    <span class="time">{_page.clock}</span>
-  </div>
-
-  <div
-    class="startbutton label {#if _page.story.startTime}going{else}notgoing{/} {#if _page.story.ready[_session.userId]}ready{/}"
-    x-bind='click:startGame'>
-    <div>{#if _page.story.ready[_session.userId]}
-      <p class="accent">Ready!</p><p>Waiting for the other player</p>
-    {else}
-      <p>Click when you're ready!</p>
-    {/}
+  <div class="content {#if _page.story.startTime}going{else}not-going{/}">
+    <div class="header-wrapper">
+      <header class="label">Multi-Player Notepad</header>
+      <textarea class="main" disabled="{not(_page.story.startTime)}">
+        {_page.story.content}
+      </textarea>
     </div>
 
+    <div class="clock">
+      <span class="label">Time remaining</span>
+      <span class="time">{_page.clock}</span>
+    </div>
+
+    <div class="start-button label {#if _page.story.ready[_session.userId]}ready{/}"
+      x-bind="click: startGame">
+      <div>
+        {#if _page.story.ready[_session.userId]}
+          <p class="accent">Ready!</p>
+          <p>Waiting for the other player</p>
+        {else}
+          <p>Click when you're ready!</p>
+        {/}
+      </div>
+    </div>
   </div>
-
-  
-
-

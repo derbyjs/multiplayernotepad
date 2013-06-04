@@ -1,17 +1,19 @@
 <Body:>
   <div class="header-wrapper">
     <header class="label">Multi-Player Notepad</header>
-    
   </div>
+
   <div class="past-stories main">
     <h2 class="label prompt-label">Prompt</h2>
-    <p class="prompt">{{_page.prompt}}</p>
+    <p class="prompt">{{_page.promptText}}</p>
     {#each _page.stories as :story}
-    <div class="story">
-      <h3 class="label">Story #{{$index}}</h3>
-      <pre class="story-text">{{:story.content}}</pre>
-    </div>
+      <div class="story">
+        <h3 class="label">Story #{{$index}}</h3>
+        <pre class="story-text">{{:story.content}}</pre>
+      </div>
     {/}
   </div>
-  <div class="reset"><a class="label" href="/">Write a new story</a></div>
+  <div class="reset">
+    <a class="label" href="/">Write a new story</a>
+  </div>
     

@@ -56,7 +56,7 @@ textarea:focus, textarea:active
   box-shadow: none
   outline: none
 
-.notgoing
+.not-going
   background: rgb(89, 91, 100)
   height: 100%
   width: 100%
@@ -66,7 +66,7 @@ textarea:focus, textarea:active
   header
     color: white
 
-.startbutton
+.start-button
   position:absolute
   top: 50%
   left: 50%
@@ -96,12 +96,12 @@ textarea:focus, textarea:active
 
   background: white
   color: #7f7f7f
-.startbutton:hover
+.start-button:hover
   cursor: pointer
   background: rgb(222, 238, 212)
-.startbutton.going
+.going .start-button
     display: none
-.startbutton.ready
+.start-button.ready
   background: #AAD193
   color: white
 
@@ -114,6 +114,7 @@ textarea:focus, textarea:active
   border: 1px solid #eeeeee
   padding: 0px
   display: inline-block
+  
 .clock
   right: horizontalMargin*2
   span
@@ -129,7 +130,8 @@ textarea:focus, textarea:active
     font-size: 18px
     color: white
     background: #f6b4b4
-.clock.notgoing
+    
+.not-going .clock
   display:none
 
 .reset
