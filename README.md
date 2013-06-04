@@ -9,7 +9,7 @@ Join a game at [http://stories.derbyjs.com/]. Two players must connect at the sa
 
 ## Installation
 
-Clone from github, then
+Clone from GitHub, then
 
 ```
 npm install
