@@ -1,0 +1,7 @@
+<Body:>
+  <h2>Prompt</h2>
+  <p>{{_page.prompt}}</p>
+  <h2>Stories</h2>
+  {#each _page.stories as :story}
+    <p>{{:story.content}}</p>
+  {/}
