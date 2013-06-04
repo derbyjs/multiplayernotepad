@@ -2,9 +2,11 @@
   <div class="content {#if _page.story.startTime}going{else}not-going{/}">
     <div class="header-wrapper">
       <header class="label">Multi-Player Notepad</header>
-      <textarea class="main" disabled="{not(_page.story.startTime)}">
-        {_page.story.content}
-      </textarea>
+      <div class="main">
+        <textarea disabled="{not(_page.story.startTime)}">
+          {_page.story.content}
+        </textarea>
+      </div>
     </div>
 
     <div class="clock">
